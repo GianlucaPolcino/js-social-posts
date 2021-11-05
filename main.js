@@ -62,6 +62,7 @@ HTMLStamp();
 
 
 function HTMLStamp (){
+
     for(let index in posts){
         container.innerHTML +=
         `
@@ -73,7 +74,7 @@ function HTMLStamp (){
                     </div>
                     <div class="post-meta__data">
                         <div class="post-meta__author">${posts[index].author.name}</div>
-                        <div class="post-meta__time">${posts[index].created}</div>
+                        <div class="post-meta__time">${reverseDate(posts[index].created)}</div>
                     </div>                    
                 </div>
             </div>
@@ -97,4 +98,11 @@ function HTMLStamp (){
         </div>
         `
     }
-}
+};
+
+function reverseDate(date) {
+    date = date.split("-").reverse().join("-");
+    console.log(date);
+    return date;
+};
+
