@@ -71,6 +71,11 @@ for(let index = 0; index < posts.length; index++){
 function HTMLStamp (){
 
     for(let index in posts){
+
+        if(posts[index].author.image === null){
+            posts[index].author.image = 'https://www.valeriolapinta.it/sites/default/files/default_images/anonymous-user_0.png';
+        }
+
         container.innerHTML +=
         `
         <div class="post">
@@ -105,6 +110,8 @@ function HTMLStamp (){
         </div>
         `
     }
+
+    
 
 };
 
