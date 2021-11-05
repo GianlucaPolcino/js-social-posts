@@ -60,12 +60,13 @@ const container = document.getElementById('container');
 
 HTMLStamp();
 
-const button = document.querySelector('.js-like-button');
+for(let index = 0; index < posts.length; index++){
 
-button.addEventListener('click', function(){
-    posts.likes ++;
-})
-
+    const like = document.querySelector(`[data-postid="${posts[index].id}"]`);
+    like.addEventListener('click', function(){
+        like.classList.add('like-button--liked');
+    })
+}
 
 function HTMLStamp (){
 
@@ -106,14 +107,6 @@ function HTMLStamp (){
     }
 
 };
-
-for(let index = 0; index < posts.length; index++){
-
-    const like = document.querySelector(`[data-postid="${posts[index].id}"]`);
-    like.addEventListener('click', function(){
-        like.classList.add('like-button--liked');
-    })
-}
 
 function reverseDate(date) {
     date = date.split("-").reverse().join("-");
